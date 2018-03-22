@@ -7,6 +7,12 @@
 
 require('./bootstrap');
 require('admin-lte');
+require('datatables.net');
+require('datatables.net-bs');
+require('jquery');
+require('jquery-slimscroll');
+require('fastclick');
+require('morris.js/morris.min.js');
 
 
 window.Vue = require('vue');

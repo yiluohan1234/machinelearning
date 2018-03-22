@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'PagesController@home')->name('home');
-
+Route::get('/test', 'PagesController@test')->name('test');
+Route::get('/test2', 'PagesController@test2')->name('test2');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
