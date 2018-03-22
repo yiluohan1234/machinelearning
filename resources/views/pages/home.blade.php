@@ -1,5 +1,5 @@
 @extends('layouts.root')
-@section('title', '首页')
+@section('title', 'home')
 @section('content_header')
     <section class="content-header">
       <h1>
