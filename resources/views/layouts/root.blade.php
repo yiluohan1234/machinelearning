@@ -7,7 +7,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
@@ -42,7 +42,7 @@
 </div>
 <!-- ./wrapper -->
 
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 <!-- 显示表格是否排序 -->
 <script>
   $(function () {
@@ -57,5 +57,6 @@
     })
   })
 </script>
+
 </body>
 </html>
