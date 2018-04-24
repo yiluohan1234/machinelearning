@@ -15,23 +15,13 @@ class PagesController extends Controller
         }
         else
         {
-            return view('pages.home');
+            return view('admin.index');
         }
 
     }
     public function test()
     {
-        return view('pages.test');
-    }
-    public function test2()
-    {
-        $chart = Charts::create('donut', 'highcharts')
-            ->title('My nice chart')
-            ->labels(['First', 'Second', 'Third'])
-            ->values([5,10,20])
-            ->dimensions(1000,500)
-            ->responsive(false);
-        return view('pages.test2', ['chart' => $chart]);
+        return view('test');
     }
 
 }

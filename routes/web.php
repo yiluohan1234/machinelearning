@@ -12,8 +12,11 @@
 */
 
 Route::get('/', 'PagesController@home')->name('home');
+Route::get('/admin', 'Admin\PagesController@index')->name('admin.index');
+Route::get('/admin/table', 'Admin\CunliangController@table')->name('table');
+Route::get('/admin/pic', 'Admin\CunliangController@pic')->name('pic');
+Route::post('/admin/odata', 'Admin\CunliangController@odata');
 Route::get('/test', 'PagesController@test')->name('test');
-Route::get('/test2', 'PagesController@test2')->name('test2');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -31,4 +34,5 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 //Users
-Route::resource('users', 'UsersController', ['only' => ['show', 'edit', 'update']]);
+Route::resource('users', 'Admin\UsersController');
+
