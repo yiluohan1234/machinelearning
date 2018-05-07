@@ -93,13 +93,11 @@
               <li>
                 <i class="fa fa-calendar-plus-o bg-blue"></i>
                 <div class="timeline-item">
-                  <span class="time"><i class="fa fa-clock-o"></i> 4月13日</span>
+                  <span class="time"><i class="fa fa-clock-o"></i> 5月7日</span>
 
-                  <h3 class="timeline-header">添加用户列表</h3>
+                  <h3 class="timeline-header">为用户管理添加，添加用户，编辑用户和删除用户的操作</h3>
+                  <h3 class="timeline-header">echarts同一个页面显示两个类型的数据</h3>
 
-                  <div class="timeline-body">
-                    展示用户列表
-                  </div>
                   <!-- <div class="timeline-footer">
                     <a class="btn btn-primary btn-xs">Read more</a>
                     <a class="btn btn-danger btn-xs">Delete</a>
