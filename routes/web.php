@@ -13,9 +13,12 @@
 Route::group(['middleware'=>['auth']], function () {
     Route::get('/', 'PagesController@home')->name('home');
     Route::get('/admin', 'Admin\PagesController@index')->name('admin.index');
-    Route::get('/admin/table', 'Admin\CunliangController@table')->name('table');
-    Route::get('/admin/pic', 'Admin\CunliangController@pic')->name('pic');
-    Route::post('/admin/odata', 'Admin\CunliangController@odata');
+    Route::get('/admin/table', 'Admin\MonitorController@table')->name('table');
+    Route::get('/admin/pic', 'Admin\MonitorController@pic')->name('pic');
+    Route::post('/admin/odata', 'Admin\MonitorController@odata');
+
+    // excel export
+    Route::get('/monitor/export','Admin\ExcelController@export')->name('monitor.export');
     Route::get('/test', 'PagesController@test')->name('test');
     //Users
     Route::resource('users', 'Admin\UsersController');
@@ -38,8 +41,4 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-// test
-Route::resource('post','PostController');
-Route::POST('addPost','PostController@addPost');
-Route::POST('editPost','PostController@editPost');
-Route::POST('deletePost','PostController@deletePost');
+

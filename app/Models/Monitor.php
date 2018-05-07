@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cunliang extends Model
+class Monitor extends Model
 {
-    protected $table = 'sys_monitor';
+    protected $table = 'monitors';
 }

@@ -18,7 +18,7 @@
     <section class="content">
       <div class="box">
             <div class="box-header">
-                <a class="btn btn-success export-csv-btn" downlaod="data.csv" href="#">导出</a>
+                <a class="btn btn-success" href="{{route('monitor.export')}}">导出</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -98,6 +98,7 @@
               "sortDescending": ": activate to sort column descending"
           },
         },
+
 
     });
   });

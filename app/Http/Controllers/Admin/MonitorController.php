@@ -5,20 +5,20 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Charts;
-use App\Models\Cunliang;
+use App\Models\Monitor;
 
 
-class CunliangController extends Controller
+class MonitorController extends Controller
 {
     public function table()
     {
-        //$data = Cunliang::where("file_type", "O")->get();
-        $data = Cunliang::all();
-        return view('admin.cunliang.table', compact('data'));
+        //$data = Monitor::where("file_type", "O")->get();
+        $data = Monitor::all();
+        return view('admin.monitor.table', compact('data'));
     }
     public function pic()
     {
-        // $data = Cunliang::where("file_type", "O")->orderBy('created_at','desc')
+        // $data = Monitor::where("file_type", "O")->orderBy('created_at','desc')
         //                 ->take(7)
         //                 ->get();
 
@@ -31,11 +31,11 @@ class CunliangController extends Controller
         // $output = shell_exec('python /home/vagrant/www/machinelearning/public/test.py');
         // //$command = exec("python /home/.../src/lib/jobs.py  $var1");
         // dd($output);
-        return view('admin.cunliang.pic');
+        return view('admin.monitor.pic');
     }
     public function odata()
     {
-        $data = Cunliang::where("file_type", "O")->latest()
+        $data = Monitor::where("file_type", "O")->latest()
                         ->take(7)
                         ->get();
 
