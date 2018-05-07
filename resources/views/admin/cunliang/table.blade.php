@@ -18,11 +18,11 @@
     <section class="content">
       <div class="box">
             <div class="box-header">
-              <h3 class="box-title">O域数据更新情况</h3>
+                <a class="btn btn-success export-csv-btn" downlaod="data.csv" href="#">导出</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="datatable" class="table table-bordered table-striped" >
                 <thead>
                 <tr>
                   <th>更新时间</th>
@@ -44,6 +44,7 @@
                 </tr>
                 @endforeach
                 </tbody>
+                <!--
                 <tfoot>
                 <tr>
                   <th>更新时间</th>
@@ -53,6 +54,7 @@
                   <th>用时(s)</th>
                 </tr>
                 </tfoot>
+                -->
               </table>
             </div>
             <!-- /.box-body -->
@@ -60,4 +62,46 @@
 
     </section>
     <!-- /.content -->
+@stop
+@section('script')
+<script>
+  $(function () {
+    $('#datatable').DataTable({
+        'paging'      : true,
+        'lengthChange': true,
+        'searching'   : true,
+        'ordering'    : true,
+        'info'        : true,
+        'autoWidth'   : false,
+        //支持国际化，将search转为中文
+        language: {
+          "decimal":        "",
+          "emptyTable":     "No data available in table",
+          "info":           "显示 _START_ 到 _END_ 页共 _TOTAL_ 条",
+          "infoEmpty":      "显示 0 到 0 页共 0 条",
+          "infoFiltered":   "(filtered from _MAX_ total entries)",
+          "infoPostFix":    "",
+          "thousands":      ",",
+          "lengthMenu":     "显示 _MENU_ 条",
+          "loadingRecords": "Loading...",
+          "processing":     "Processing...",
+          "search":         "Search:",
+          "zeroRecords":    "没有匹配项",
+          "paginate": {
+              "first":      "First",
+              "last":       "Last",
+              "next":       "下页",
+              "previous":   "上页"
+          },
+          "aria": {
+              "sortAscending":  ": activate to sort column ascending",
+              "sortDescending": ": activate to sort column descending"
+          },
+        },
+
+    });
+  });
+
+</script>
+
 @stop

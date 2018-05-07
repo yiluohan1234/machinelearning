@@ -84,6 +84,32 @@
             <ul class="timeline timeline-inverse">
               <!-- timeline time label -->
               <li class="time-label">
+                    <span class="bg-green">
+                      2018年五月
+                    </span>
+              </li>
+              <!-- /.timeline-label -->
+              <!-- timeline item -->
+              <li>
+                <i class="fa fa-calendar-plus-o bg-blue"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fa fa-clock-o"></i> 4月13日</span>
+
+                  <h3 class="timeline-header">添加用户列表</h3>
+
+                  <div class="timeline-body">
+                    展示用户列表
+                  </div>
+                  <!-- <div class="timeline-footer">
+                    <a class="btn btn-primary btn-xs">Read more</a>
+                    <a class="btn btn-danger btn-xs">Delete</a>
+                  </div> -->
+                </div>
+              </li>
+            </ul>
+            <ul class="timeline timeline-inverse">
+              <!-- timeline time label -->
+              <li class="time-label">
                     <span class="bg-red">
                       2018年四月
                     </span>

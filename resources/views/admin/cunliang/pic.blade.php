@@ -24,8 +24,7 @@
 @stop
 @section('script')
 <script type="text/javascript">
-    var names = [];
-    var ttls = [];
+    var names = [],ttls = [];
     function getData()
     {
         $.post("{{ url('/admin/odata') }}", {
@@ -37,11 +36,10 @@
             });
         });
     }
+
     getData();
     function chart() {
         var myChart = echarts.init(document.getElementById("contain"));
-
-
         option = {
             title : {
                 text: 'O域数据最近7天更新情况'

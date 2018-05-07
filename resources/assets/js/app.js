@@ -3,6 +3,7 @@
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
+ *
  */
 
 require('./bootstrap');
@@ -13,7 +14,7 @@ require('jquery');
 require('jquery-slimscroll');
 require('fastclick');
 require('morris.js/morris.min.js');
-require('layui-src/dist/layui.js');
+
 require('raphael/raphael.min.js');
 require('jquery-sparkline/jquery.sparkline.min.js');
 require('moment/min/moment.min.js');
@@ -23,6 +24,7 @@ require('bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');
 require('jquery-slimscroll/jquery.slimscroll.min.js');
 require('fastclick/lib/fastclick.js');
 require('layui-src/dist/layui.js');
+require('excellentexport/excellentexport.js');
 
 
 window.Vue = require('vue');
