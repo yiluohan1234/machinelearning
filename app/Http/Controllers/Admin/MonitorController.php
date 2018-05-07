@@ -42,5 +42,14 @@ class MonitorController extends Controller
         return array_reverse($data->toArray(),false);
 
     }
+    public function ldata()
+    {
+        $data = Monitor::where("file_type", "label")->latest()
+                        ->take(7)
+                        ->get();
+
+        return array_reverse($data->toArray(),false);
+
+    }
 
 }

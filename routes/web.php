@@ -16,6 +16,7 @@ Route::group(['middleware'=>['auth']], function () {
     Route::get('/admin/table', 'Admin\MonitorController@table')->name('table');
     Route::get('/admin/pic', 'Admin\MonitorController@pic')->name('pic');
     Route::post('/admin/odata', 'Admin\MonitorController@odata');
+    Route::post('/admin/ldata', 'Admin\MonitorController@ldata');
 
     // excel export
     Route::get('/monitor/export','Admin\ExcelController@export')->name('monitor.export');

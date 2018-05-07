@@ -3,7 +3,7 @@
 @section('content_header')
     <section class="content-header">
       <h1>
-        O域数据最近7天更新情况
+        存量数据最近7天更新情况
         <!--<small>Control panel</small>-->
       </h1>
       <ol class="breadcrumb">
@@ -24,31 +24,35 @@
 @stop
 @section('script')
 <script type="text/javascript">
-    var names = [],ttls = [];
-    function getData()
-    {
-        $.post("{{ url('/admin/odata') }}", {
-            "_token": "{{ csrf_token() }}"
-        }, function(data) {
-            $.each(data, function(i, item) {
-                names.push(item.update_date);
-                ttls.push(item.space_size);
-            });
-        });
-    }
+    var names = [],ttls_O = [],ttls_l = [];
 
-    getData();
+    $.post("{{ url('/admin/odata') }}", {
+        "_token": "{{ csrf_token() }}"
+    }, function(data) {
+        $.each(data, function(i, item) {
+            names.push(item.update_date);
+            ttls_O.push(item.space_size);
+        });
+    });
+    $.post("{{ url('/admin/ldata') }}", {
+        "_token": "{{ csrf_token() }}"
+    }, function(data) {
+        $.each(data, function(i, item) {
+            ttls_l.push(item.space_size);
+        });
+    });
+
     function chart() {
         var myChart = echarts.init(document.getElementById("contain"));
         option = {
             title : {
-                text: 'O域数据最近7天更新情况'
+                text: '存量数据最近7天更新情况'
             },
             tooltip : {
                 trigger: 'axis'
             },
             legend: {
-                data:['数据大小']
+                data:['O域数据', '标签数据']
             },
             toolbox: {
                 show : true,
@@ -63,36 +67,28 @@
             calculable : true,
             xAxis : [
                 {
-                    axisLine: {
-                        lineStyle: { color: '#333' }
-                    },
-                    axisLabel: {
-                        rotate: 30,
-                        interval: 0
-                    },
+
                     type : 'category',
-                    boundaryGap : false,
                     data : names    // x的数据，为上个方法中得到的names
                 }
             ],
             yAxis : [
                 {
                     type : 'value',
-                    axisLabel : {
-                        formatter: '{value} M'
-                    },
-                    axisLine: {
-                        lineStyle: { color: '#333' }
-                    }
                 }
             ],
             series : [
                 {
-                    name:'数据大小',
+                    name:'O域数据',
                     type:'line',
-                    smooth: 0.3,
-                    data: ttls   // y轴的数据，由上个方法中得到的ttls
+                    data: ttls_O   // y轴的数据，由上个方法中得到的ttls
+                },
+                {
+                    name:'标签数据',
+                    type:'line',
+                    data: ttls_l   // y轴的数据，由上个方法中得到的ttls
                 }
+
             ]
     };
     // 使用刚指定的配置项和数据显示图表。
