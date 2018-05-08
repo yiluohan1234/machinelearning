@@ -21,11 +21,21 @@ Route::group(['middleware'=>['auth']], function () {
     // excel export
     Route::get('/monitor/export','Admin\ExcelController@export')->name('monitor.export');
     Route::get('/test', 'PagesController@test')->name('test');
-    //Users
-    Route::resource('users', 'Admin\UsersController');
-    Route::POST('addUser','Admin\UsersController@addUser');
-    Route::POST('deleteUser','Admin\UsersController@deleteUser');
-    Route::POST('editUser','Admin\UsersController@editUser');
+    // Users
+    Route::resource('admin/users', 'Admin\UsersController');
+    Route::POST('admin/addUser','Admin\UsersController@addUser');
+    Route::POST('admin/deleteUser','Admin\UsersController@deleteUser');
+    Route::POST('admin/editUser','Admin\UsersController@editUser');
+    // roles
+    Route::resource('admin/roles', 'Admin\RolesController');
+    Route::POST('admin/addRole','Admin\RolesController@addRole');
+    Route::POST('admin/deleteRole','Admin\RolesController@deleteRole');
+    Route::POST('admin/editRole','Admin\RolesController@editRole');
+    // permissions
+    Route::resource('admin/permissions', 'Admin\PermissionsController');
+    Route::POST('admin/addPermission','Admin\PermissionsController@addPermission');
+    Route::POST('admin/deletePermission','Admin\PermissionsController@deletePermission');
+    Route::POST('admin/editPermission','Admin\PermissionsController@editPermission');
 });
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

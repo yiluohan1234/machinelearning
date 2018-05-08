@@ -42,6 +42,7 @@
         });
     });
 
+
     function chart() {
         var myChart = echarts.init(document.getElementById("contain"));
         option = {

@@ -86,6 +86,8 @@
         </ul>
       </li>
       <!--用户-->
+      @can('manage_users')
+      <li class="header">系统管理</li>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-user"></i><span>用户与权限</span>
@@ -95,9 +97,11 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="{{route('users.index')}}"><i class="fa fa-circle-o"></i>用户</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i>用户组管理</a></li>
+          <li><a href="{{route('roles.index')}}"><i class="fa fa-circle-o"></i>角色</a></li>
+          <li><a href="{{route('permissions.index')}}"><i class="fa fa-circle-o"></i>权限</a></li>
         </ul>
       </li>
+      @endcan
 
       <li class="header">标签</li>
       <li><a href="http://layer.layui.com/"><i class="fa fa-circle-o text-red"></i> <span>layer</span></a></li>

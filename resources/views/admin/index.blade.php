@@ -3,8 +3,8 @@
 @section('content_header')
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Control panel</small>
+        主页
+        {{-- <small>Control panel</small> --}}
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -15,6 +15,7 @@
 @section('content')
     <!-- Main content -->
     <section class="content">
+      <h1>欢迎来到ML管理平台</h1>
         <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
@@ -78,6 +79,7 @@
         </div>
         <!-- ./col -->
       </div>
+      @can('manage_users')
       <!-- /.row -->
         <div class="tab-pane" id="timeline">
             <!-- The timeline -->
@@ -87,6 +89,23 @@
                     <span class="bg-green">
                       2018年五月
                     </span>
+              </li>
+               <!-- timeline item -->
+              <li>
+                <i class="fa fa-calendar-plus-o bg-blue"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fa fa-clock-o"></i> 5月8日</span>
+
+                  <h3 class="timeline-header">添加用户多权限管理</h3>
+                  <h3 class="timeline-header">权角色管理</h3>
+                  <h3 class="timeline-header">权限管理</h3>
+                  <h3 class="timeline-header">用户具有什么权限还未添加</h3>
+
+                  <!-- <div class="timeline-footer">
+                    <a class="btn btn-primary btn-xs">Read more</a>
+                    <a class="btn btn-danger btn-xs">Delete</a>
+                  </div> -->
+                </div>
               </li>
               <!-- /.timeline-label -->
               <!-- timeline item -->
@@ -188,6 +207,7 @@
             </div>
         </div>
         -->
+      @endcan
     </section>
     <!-- /.content -->
 @stop
