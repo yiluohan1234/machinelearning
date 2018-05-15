@@ -24,9 +24,10 @@
         @else
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">个人设置</a></li>
+            <li><a class="fa fa-cog fa-lg" href="#"> 设置</a></li>
+            <li><a class="fa fa-user fa-lg" href="#"> 个人中心</a></li>
             <li>
-                <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">退出</a>
+                <a class="fa fa-sign-out fa-lg" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">退出</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>

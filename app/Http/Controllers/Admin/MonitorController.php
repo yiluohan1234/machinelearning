@@ -35,17 +35,28 @@ class MonitorController extends Controller
     }
     public function odata()
     {
-        $data = Monitor::where("file_type", "O")->latest()
+        $odata = Monitor::where("file_type", "O")->orderBy('update_date', 'desc')
                         ->take(7)
                         ->get();
+        $odata_v = array_reverse($odata->toArray(),false);
+        $ldata = Monitor::where("file_type", "label")->orderBy('update_date', 'desc')
+                        ->take(7)
+                        ->get();
+        $ldata_v = array_reverse($ldata->toArray(),false);
 
-        return array_reverse($data->toArray(),false);
+        $result = [
+            "O" => $odata_v,
+            "label" => $ldata_v
+            ];
+
+        return $result;
 
     }
-    public function ldata()
+
+    public function filesystem()
     {
-        $data = Monitor::where("file_type", "label")->latest()
-                        ->take(7)
+        $data = Monitor::where("file_type", "O")->orderBy('update_date', 'desc')
+                        ->take(1)
                         ->get();
 
         return array_reverse($data->toArray(),false);

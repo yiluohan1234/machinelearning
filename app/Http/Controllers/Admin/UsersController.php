@@ -15,6 +15,7 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::paginate(4);
+
         return view('admin.users.index', compact('users'));
     }
     // 创建用户
