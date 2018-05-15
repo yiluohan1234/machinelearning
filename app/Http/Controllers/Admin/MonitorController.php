@@ -33,6 +33,7 @@ class MonitorController extends Controller
         // dd($output);
         return view('admin.monitor.pic');
     }
+    //数据近七日更新情况
     public function odata()
     {
         $odata = Monitor::where("file_type", "O")->orderBy('update_date', 'desc')
@@ -52,14 +53,24 @@ class MonitorController extends Controller
         return $result;
 
     }
-
+    //本地磁盘占用情况
     public function filesystem()
     {
         $data = Monitor::where("file_type", "O")->orderBy('update_date', 'desc')
                         ->take(1)
                         ->get();
+        $result = [
+            [
+                "value" => $data[0]->filesystem_used,
+                "name" => "使用量"
+            ],
+            [
+                "value"=>$data[0]->filesystem_size,
+                "name"=>"总量"
+            ]
+        ];
 
-        return array_reverse($data->toArray(),false);
+        return $result;
 
     }
 

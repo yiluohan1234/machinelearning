@@ -1,14 +1,13 @@
 @extends('layouts.admin.root')
-@section('title', '数据更新')
+@section('title', '数据')
 @section('content_header')
     <section class="content-header">
       <h1>
-        数据更新
+        数据更新列表
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#"><i class="fa fa-dashboard"></i> 存量经营</a></li>
-        <li><a href="#"><i class="fa fa-dashboard"></i> O域数据</a></li>
         <li class="active">数据更新</li>
       </ol>
     </section>

@@ -26,13 +26,13 @@
           </a>
           <ul class="treeview-menu">
             <li class="active treeview">
-              <a href="#"><i class="fa fa-circle-o"></i> O域数据
+              <a href="#"><i class="fa fa-circle-o"></i> 数据更新
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{route('table')}}"><i class="fa fa-circle-o"></i> 数据更新</a></li>
+                <li><a href="{{route('table')}}"><i class="fa fa-circle-o"></i> 数据</a></li>
                 <li><a href="{{route('pic')}}"><i class="fa fa-circle-o"></i>图</a></li>
                 <li class="treeview">
                   <a href="#"><i class="fa fa-circle-o"></i> Wiki
@@ -48,31 +48,8 @@
               </ul>
             </li>
           </ul>
-          <ul class="treeview-menu">
-            <li class="treeview">
-              <a href="#"><i class="fa fa-circle-o"></i> 标签数据
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{route('table')}}"><i class="fa fa-circle-o"></i> 数据更新</a></li>
-                <li><a href="{{route('pic')}}"><i class="fa fa-circle-o"></i>图</a></li>
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
         </li>
+      @can('manage_users')
       <li class="treeview">
         <a href="#">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -86,7 +63,6 @@
         </ul>
       </li>
       <!--用户-->
-      @can('manage_users')
       <li class="header">系统管理</li>
       <li class="treeview">
         <a href="#">
