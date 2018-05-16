@@ -103,6 +103,25 @@
                 }]
             });
         });
+        // $.ajax({
+        //     type: 'post',
+        //     url: '/admin/filesystem',//请求数据的地址
+        //     dataType: "json",        //返回数据形式为json
+        //     success: function (result) {
+        //         myBarChart.hideLoading();    //隐藏加载动画
+        //         myBarChart.setOption({        //加载数据图表
+        //             series: [
+        //             {
+        //                 data: result
+        //             }]
+        //         });
+        //     },
+        //     error: function (errorMsg) {
+        //         //请求失败时执行该函数
+        //         alert("图表请求数据失败!");
+        //         myChart.hideLoading();
+        //     }
+        // });
         //当setOption第二个参数为true时，会阻止数据合并
         if (option && typeof option === "object") {
             myBarChart.setOption(option, true);

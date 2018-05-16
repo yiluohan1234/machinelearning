@@ -12,6 +12,7 @@
 */
 Route::group(['middleware'=>['auth']], function () {
     Route::get('/', 'PagesController@home')->name('home');
+    Route::get('/profile', 'Admin\PagesController@profile')->name('profile');
     Route::get('/admin', 'Admin\PagesController@index')->name('admin.index');
     Route::get('/admin/table', 'Admin\MonitorController@table')->name('table');
     Route::get('/admin/pic', 'Admin\MonitorController@pic')->name('pic');
@@ -37,6 +38,7 @@ Route::group(['middleware'=>['auth']], function () {
     Route::POST('admin/addPermission','Admin\PermissionsController@addPermission');
     Route::POST('admin/deletePermission','Admin\PermissionsController@deletePermission');
     Route::POST('admin/editPermission','Admin\PermissionsController@editPermission');
+
 });
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

@@ -17,4 +17,8 @@ class PagesController extends Controller
             return view('admin.index');
         }
     }
+    public function profile()
+    {
+        return view('admin.profile');
+    }
 }

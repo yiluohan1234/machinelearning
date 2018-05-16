@@ -4,6 +4,8 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Models\User;
+use App\Models\Monitor;
 
 class Kernel extends ConsoleKernel
 {
@@ -26,6 +28,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->command('ml:send-mail-when-full')->dailyAt('11:00');
+        $schedule->command('ml:send-mail-statics')->->weekly()->fridays()->at('17:00');
     }
 
     /**
