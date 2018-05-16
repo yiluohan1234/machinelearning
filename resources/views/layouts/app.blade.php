@@ -40,9 +40,8 @@
                         &nbsp;
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
+                    <!--
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">登录</a></li>
                             <li><a href="{{ route('register') }}">注册</a></li>
@@ -68,6 +67,7 @@
                             </li>
                         @endguest
                     </ul>
+                    Right Side Of Navbar -->
                 </div>
             </div>
         </nav>
