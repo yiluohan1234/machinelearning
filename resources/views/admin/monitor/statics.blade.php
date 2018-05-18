@@ -3,6 +3,7 @@
 hi, {{$user}}:
     {{$content}}
 </pre>
+
 <table border="0"  cellpadding="0"  cellspacing="0"  style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box;">
 <tr>
     <td style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box;">

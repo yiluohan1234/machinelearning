@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
         $schedule->command('ml:send-mail-when-full')->dailyAt('11:00');
-        $schedule->command('ml:send-mail-statics')->->weekly()->fridays()->at('17:00');
+        $schedule->command('ml:send-mail-statics')->weekly()->fridays()->at('17:00');
     }
 
     /**

@@ -12,10 +12,15 @@ class MonitorController extends Controller
 {
     public function table()
     {
-        //$data = Monitor::where("file_type", "O")->get();
-        $data = Monitor::all();
-        return view('admin.monitor.table', compact('data'));
+        return view('admin.monitor.table');
     }
+     public function tabledata()
+    {
+        $odata = Monitor::all();
+        $data = array_reverse($odata->toArray(),false);
+        return $data;
+    }
+
     public function pic()
     {
         // $data = Monitor::where("file_type", "O")->orderBy('created_at','desc')

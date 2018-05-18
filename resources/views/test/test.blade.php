@@ -3,7 +3,7 @@
 @section('content_header')
     <section class="content-header">
       <h1>
-        数据更新列表
+        test
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -14,8 +14,6 @@
 @stop
 @section('content')
     <!-- Main content -->
-    <section class="content">
-      <!-- Main content -->
     <section class="content">
       <div id="toolbar">
         <select class="form-control">
@@ -33,7 +31,7 @@
 <script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
 <script type="text/javascript">
 $('#table').bootstrapTable({
-    url: '/admin/table/data',
+    url: '/admin/test',
     toolbar:'#toolbar',
     singleSelect:false,
     clickToSelect:true,
@@ -77,5 +75,4 @@ $('#table').bootstrapTable({
     }, ]
 });
 </script>
-
 @stop

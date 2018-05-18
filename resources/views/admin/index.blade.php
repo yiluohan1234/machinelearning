@@ -90,6 +90,45 @@
                       2018年五月
                     </span>
               </li>
+              <li>
+                <i class="fa fa-calendar-plus-o bg-blue"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fa fa-clock-o"></i> 5月15日</span>
+
+                  <h3 class="timeline-header">每周邮件通知数据</h3>
+
+                  <!-- <div class="timeline-footer">
+                    <a class="btn btn-primary btn-xs">Read more</a>
+                    <a class="btn btn-danger btn-xs">Delete</a>
+                  </div> -->
+                </div>
+              </li>
+              <li>
+                <i class="fa fa-calendar-plus-o bg-blue"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fa fa-clock-o"></i> 5月13日</span>
+
+                  <h3 class="timeline-header">echarts多图显示，显示本地磁盘占用情况</h3>
+
+                  <!-- <div class="timeline-footer">
+                    <a class="btn btn-primary btn-xs">Read more</a>
+                    <a class="btn btn-danger btn-xs">Delete</a>
+                  </div> -->
+                </div>
+              </li>
+              <li>
+                <i class="fa fa-calendar-plus-o bg-blue"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fa fa-clock-o"></i> 5月10日</span>
+
+                  <h3 class="timeline-header">添加邮件，当本地磁盘满时发送邮件</h3>
+
+                  <!-- <div class="timeline-footer">
+                    <a class="btn btn-primary btn-xs">Read more</a>
+                    <a class="btn btn-danger btn-xs">Delete</a>
+                  </div> -->
+                </div>
+              </li>
                <!-- timeline item -->
               <li>
                 <i class="fa fa-calendar-plus-o bg-blue"></i>

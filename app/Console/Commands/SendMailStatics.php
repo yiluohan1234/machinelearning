@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\User;
 use Mail;
+use App\Models\Monitor;
 
 class SendMailStatics extends Command
 {
@@ -41,6 +42,10 @@ class SendMailStatics extends Command
     {
         $this->info("开始发送邮件...");
         $users = User::all();
+        $odata = Monitor::where("file_type", "O")->orderBy('update_date', 'desc')
+                        ->take(7)
+                        ->get();
+        $odata_v = array_reverse($odata->toArray(),false);
         $to = [];
         $cc = [];
         foreach ($users as $user)
@@ -59,7 +64,7 @@ class SendMailStatics extends Command
         $subject = '互联网运营平台数据更新';
         Mail::send(
             'admin.monitor.statics',
-            ['content' => $message, 'user' => "all"],
+            ['content' => $message, 'user' => "all", 'odata' => $odata_v],
             function ($message) use($to, $cc, $subject) {
                 $message->to($to)->cc($cc)->subject($subject);
             }

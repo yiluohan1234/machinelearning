@@ -26,6 +26,11 @@ require('fastclick/lib/fastclick.js');
 //
 require('layui-src/dist/layui.js');
 require('excellentexport/excellentexport.js');
+require('bootstrap-table/dist/bootstrap-table.min.js');
+require('bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js');
+require('bootstrap-table/dist/extensions/export/bootstrap-table-export.js');
+
+
 
 
 window.Vue = require('vue');

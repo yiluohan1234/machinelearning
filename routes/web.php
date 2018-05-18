@@ -14,15 +14,13 @@ Route::group(['middleware'=>['auth']], function () {
     Route::get('/', 'PagesController@home')->name('home');
     Route::get('/profile', 'Admin\PagesController@profile')->name('profile');
     Route::get('/admin', 'Admin\PagesController@index')->name('admin.index');
+
     Route::get('/admin/table', 'Admin\MonitorController@table')->name('table');
+    Route::get('/admin/table/data', 'Admin\MonitorController@tabledata');
     Route::get('/admin/pic', 'Admin\MonitorController@pic')->name('pic');
     Route::post('/admin/odata', 'Admin\MonitorController@odata');
     Route::post('/admin/filesystem', 'Admin\MonitorController@filesystem');
 
-
-    // excel export
-    Route::get('/monitor/export','Admin\ExcelController@export')->name('monitor.export');
-    Route::get('/test', 'PagesController@test')->name('test');
     // Users
     Route::resource('admin/users', 'Admin\UsersController');
     Route::POST('admin/addUser','Admin\UsersController@addUser');
@@ -38,6 +36,11 @@ Route::group(['middleware'=>['auth']], function () {
     Route::POST('admin/addPermission','Admin\PermissionsController@addPermission');
     Route::POST('admin/deletePermission','Admin\PermissionsController@deletePermission');
     Route::POST('admin/editPermission','Admin\PermissionsController@editPermission');
+
+    //test
+    Route::get('/test/icons', 'PagesController@icons')->name('test.icons');
+    Route::get('/admin/bootstraptable', 'PagesController@bootstraptable');
+    Route::get('/admin/test', 'PagesController@test');
 
 });
 // Authentication Routes...

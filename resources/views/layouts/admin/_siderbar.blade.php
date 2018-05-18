@@ -50,9 +50,24 @@
           </ul>
         </li>
       @can('manage_users')
+      <!--用户-->
+      <li class="header">系统管理</li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          <i class="fa fa-gear"></i><span>用户与权限</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{route('users.index')}}"><i class="fa fa-user"></i>用户</a></li>
+          <li><a href="{{route('roles.index')}}"><i class="fa fa-cubes"></i>角色</a></li>
+          <li><a href="{{route('permissions.index')}}"><i class="fa fa-key"></i>权限</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-gears"></i> <span>Dashboard</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
@@ -62,26 +77,11 @@
           <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
         </ul>
       </li>
-      <!--用户-->
-      <li class="header">系统管理</li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-user"></i><span>用户与权限</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="{{route('users.index')}}"><i class="fa fa-circle-o"></i>用户</a></li>
-          <li><a href="{{route('roles.index')}}"><i class="fa fa-circle-o"></i>角色</a></li>
-          <li><a href="{{route('permissions.index')}}"><i class="fa fa-circle-o"></i>权限</a></li>
-        </ul>
-      </li>
       @endcan
 
       <li class="header">标签</li>
       <li><a href="http://layer.layui.com/"><i class="fa fa-circle-o text-red"></i> <span>layer</span></a></li>
-      <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+      <li><a href="{{route('test.icons')}}"><i class="fa fa-circle-o text-yellow"></i> <span>icons</span></a></li>
       <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
     </ul>
   </section>

@@ -3,7 +3,6 @@
 hi, {{$user}}:
     {{$content}}
 
-
     平台使用情况如下:
     <table width="90%" id="mytab"  border="1" class="t1">
       <thead>
