@@ -44619,7 +44619,7 @@ return zhTw;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(139);
-module.exports = __webpack_require__(194);
+module.exports = __webpack_require__(195);
 
 
 /***/ }),
@@ -44657,8 +44657,9 @@ __webpack_require__(175);
 __webpack_require__(184);
 __webpack_require__(185);
 __webpack_require__(186);
+__webpack_require__(187);
 
-window.Vue = __webpack_require__(187);
+window.Vue = __webpack_require__(188);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -44666,7 +44667,7 @@ window.Vue = __webpack_require__(187);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', __webpack_require__(190));
+Vue.component('example-component', __webpack_require__(191));
 
 var app = new Vue({
   el: '#app'
@@ -98905,6 +98906,83 @@ if((!e.fromHtml||"undefined"!=typeof p||z.checkbox||z.radio)&&z.visible&&(!e.opt
 
 /***/ }),
 /* 187 */
+/***/ (function(module, exports) {
+
+/**
+ * @author: Dennis Hernández
+ * @webSite: http://djhvscf.github.io/Blog
+ * @version: v1.0.0
+ */
+
+!function ($) {
+
+    'use strict';
+
+    $.extend($.fn.bootstrapTable.defaults, {
+        multipleSearch: false,
+	    delimeter: " "
+    });
+
+    var BootstrapTable = $.fn.bootstrapTable.Constructor,
+        _initSearch = BootstrapTable.prototype.initSearch;
+
+    BootstrapTable.prototype.initSearch = function () {
+        if (this.options.multipleSearch) {
+            if (this.searchText === undefined) {
+                return;
+            }
+            var strArray = this.searchText.split(this.options.delimeter),
+                that = this,
+                f = $.isEmptyObject(this.filterColumns) ? null : this.filterColumns,
+                dataFiltered = [];
+
+            if (strArray.length === 1) {
+                _initSearch.apply(this, Array.prototype.slice.apply(arguments));
+            } else {
+                for (var i = 0; i < strArray.length; i++) {
+                    var str = strArray[i].trim();
+                    dataFiltered = str ? $.grep(dataFiltered.length === 0 ? this.options.data : dataFiltered, function (item, i) {
+                        for (var key in item) {
+                            key = $.isNumeric(key) ? parseInt(key, 10) : key;
+                            var value = item[key],
+                                column = that.columns[that.fieldsColumnsIndex[key]],
+                                j = $.inArray(key, that.header.fields);
+
+                            // Fix #142: search use formated data
+                            if (column && column.searchFormatter) {
+                                value = $.fn.bootstrapTable.utils.calculateObjectValue(column,
+                                    that.header.formatters[j], [value, item, i], value);
+                            }
+
+                            var index = $.inArray(key, that.header.fields);
+                            if (index !== -1 && that.header.searchables[index] && (typeof value === 'string' || typeof value === 'number')) {
+                                if (that.options.strictSearch) {
+                                    if ((value + '').toLowerCase() === str) {
+                                        return true;
+                                    }
+                                } else {
+                                    if ((value + '').toLowerCase().indexOf(str) !== -1) {
+                                        return true;
+                                    }
+                                }
+                            }
+                        }
+                        return false;
+                    }) : this.data;
+                }
+
+                this.data = dataFiltered;
+            }
+        } else {
+            _initSearch.apply(this, Array.prototype.slice.apply(arguments));
+        }
+    };
+
+}(jQuery);
+
+
+/***/ }),
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109867,10 +109945,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(188).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(189).setImmediate))
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var apply = Function.prototype.apply;
@@ -109923,7 +110001,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(189);
+__webpack_require__(190);
 // On some exotic environments, it's not clear which object `setimmeidate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -109937,7 +110015,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -110130,15 +110208,15 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(6)))
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(191)
+var normalizeComponent = __webpack_require__(192)
 /* script */
-var __vue_script__ = __webpack_require__(192)
+var __vue_script__ = __webpack_require__(193)
 /* template */
-var __vue_template__ = __webpack_require__(193)
+var __vue_template__ = __webpack_require__(194)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -110177,7 +110255,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -110286,7 +110364,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -110315,7 +110393,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -110358,7 +110436,7 @@ if (false) {
 }
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -45,7 +45,21 @@ class SendMailStatics extends Command
         $odata = Monitor::where("file_type", "O")->orderBy('update_date', 'desc')
                         ->take(7)
                         ->get();
-        $odata_v = array_reverse($odata->toArray(),false);
+        $ldata = Monitor::where("file_type", "label")->orderBy('update_date', 'desc')
+                        ->take(7)
+                        ->get();
+        $weeklyOdata = 0;
+        $weeklyLdata = 0;
+
+        foreach ($odata as $data)
+        {
+            $weeklyOdata += $data->space_size;
+        }
+        foreach ($ldata as $data)
+        {
+            $weeklyLdata += $data->space_size;
+        }
+
         $to = [];
         $cc = [];
         foreach ($users as $user)
@@ -64,7 +78,7 @@ class SendMailStatics extends Command
         $subject = '互联网运营平台数据更新';
         Mail::send(
             'admin.monitor.statics',
-            ['content' => $message, 'user' => "all", 'odata' => $odata_v],
+            ['content' => $message, 'user' => "all", 'odata' => $odata,'ldata' => $ldata, 'sumOdata' => round($weeklyOdata/1024,2), 'sumLdata'=> round($weeklyLdata/1024,2)],
             function ($message) use($to, $cc, $subject) {
                 $message->to($to)->cc($cc)->subject($subject);
             }

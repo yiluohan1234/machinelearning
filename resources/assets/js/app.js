@@ -29,6 +29,8 @@ require('excellentexport/excellentexport.js');
 require('bootstrap-table/dist/bootstrap-table.min.js');
 require('bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js');
 require('bootstrap-table/dist/extensions/export/bootstrap-table-export.js');
+require('bootstrap-table/dist/extensions/multiple-search/bootstrap-table-multiple-search.js');
+
 
 
 
