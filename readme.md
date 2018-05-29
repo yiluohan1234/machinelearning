@@ -7,7 +7,7 @@
 - 本地服务器数据占用超过80%实时邮件提醒
 - 每周邮件发送数据更新报告
 
-![](https://app.yinxiang.com/shard/s70/res/c15d58ac-0fb4-425a-b7e8-c84bcb5a97f9/1.png)
+![](https://github.com/yiluohan1234/machinelearning/tree/master/public/Screenshot_2018_05_29.png)
 ## 安装说明
 ### 1.项目地址
 ```
