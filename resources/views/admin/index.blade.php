@@ -95,6 +95,19 @@
                 <div class="timeline-item">
                   <span class="time"><i class="fa fa-clock-o"></i> 5月18日</span>
 
+                  <h3 class="timeline-header">每周更新数据实时邮件报告，移动段手机端适配有问题</h3>
+
+                  <!-- <div class="timeline-footer">
+                    <a class="btn btn-primary btn-xs">Read more</a>
+                    <a class="btn btn-danger btn-xs">Delete</a>
+                  </div> -->
+                </div>
+              </li>
+              <li>
+                <i class="fa fa-calendar-plus-o bg-blue"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fa fa-clock-o"></i> 5月18日</span>
+
                   <h3 class="timeline-header">数据显示，实现导出功能</h3>
 
                   <!-- <div class="timeline-footer">

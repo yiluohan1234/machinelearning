@@ -33,24 +33,26 @@
 <script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
 <script type="text/javascript">
 $('#table').bootstrapTable({
-    url: '/admin/table/data',
+    url: '/admin/table/data',           //请求后台的URL
     toolbar:'#toolbar',
     singleSelect:false,
-    clickToSelect:true,
+    clickToSelect:true,                 //是否启用点击选中行
     sortName: "update_date",
-    sortOrder: "desc",
-    pageSize: 7,
-    pageNumber: 1,
-    pageList: "[7, 14, 30, 100, All]",
-    showToggle: false,
-    showRefresh: true,
-    showColumns: true,
-    cache: true,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
-    showExport: true,                     //是否显示导出
-    exportDataType: "basic",              //basic', 'all', 'selected'.
+    sortOrder: "desc",                  //排序方式
+    pageSize: 7,                        //每页的记录行数
+    pageNumber: 1,                      //初始化加载第一页，默认第一页
+    pageList: "[7, 14, 30, 100, All]",  //可供选择的每页的行数
+    showToggle: false,                  //是否显示详细视图和列表视图的切换按钮
+    cardView: false,                    //是否显示详细视图
+    detailView: false,                  //是否显示父子表
+    showRefresh: true,                  //是否显示刷新按钮
+    showColumns: true,                  //是否显示所有的列
+    cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+    showExport: true,                   //是否显示导出
+    exportDataType: "basic",            //basic', 'all', 'selected'.
     striped: true,                      //是否显示行间隔色
     search: true,
-    pagination: true,
+    pagination: true,                   //是否显示分页
     columns: [{
         field: "state",
         checkbox:true,

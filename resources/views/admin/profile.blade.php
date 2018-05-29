@@ -32,7 +32,7 @@
           <!-- /.box -->
 
           <!-- About Me Box -->
-          <div class="box box-primary">
+          {{-- <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">About Me</h3>
             </div>
@@ -69,14 +69,14 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
             </div>
             <!-- /.box-body -->
-          </div>
+          </div> --}}
           <!-- /.box -->
         </div>
         <!-- /.col -->
         <div class="col-md-9">
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
+              <li class="active"><a href="#settings" data-toggle="tab">settings</a></li>
             </ul>
             <div class="tab-content">
 
@@ -84,52 +84,43 @@
               <div class="active tab-pane" id="settings">
                 <form class="form-horizontal">
                   <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+                    <label for="inputName" class="col-sm-2 control-label">昵称</label>
 
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputName" placeholder="Name">
+                      <input type="email" class="form-control" id="inputName" placeholder="昵称" value="{{Auth::user()->name}}">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                    <label for="inputEmail" class="col-sm-2 control-label">邮箱</label>
 
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                      <input type="email" class="form-control" id="inputEmail" placeholder="邮箱" value="{{Auth::user()->email}}">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+                    <label for="inputExperience" class="col-sm-2 control-label">旧密码</label>
 
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputName" placeholder="Name">
+                      <input type="password" class="form-control" id="inputSkills" placeholder="旧密码">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
+                    <label for="inputExperience" class="col-sm-2 control-label">密码</label>
 
                     <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                      <input type="password" class="form-control" id="inputSkills" placeholder="密码">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
+                    <label for="inputSkills" class="col-sm-2 control-label">确认密码</label>
 
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                      <input type="password" class="form-control" id="inputSkills" placeholder="确认密码">
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-danger">Submit</button>
+                      <button type="submit" class="btn btn-danger">提交</button>
                     </div>
                   </div>
                 </form>

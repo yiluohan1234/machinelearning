@@ -1,8 +1,9 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <pre>
 hi, {{$user}}:
     {{$content}}
-    <table width="90%" id="mytab"  border="1" class="t1">
+    <table class= "table-container" width="90%" id="mytab"  border="1" class="t1">
       <thead>
         <th></th>
         @foreach($odata as $data)
@@ -126,7 +127,13 @@ table.t3 th{
 table.t3 tr.a1{
     background-color:#fbd8e8;
 }
-
+.table-container
+{
+width: 100%;
+overflow-y: auto;
+_overflow: auto;
+margin: 0 0 1em;
+}
 -->
 </style>
 </html>
